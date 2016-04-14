@@ -181,6 +181,8 @@ Machine.prototype.up = function(args, cb) {
         var data = buff.toString();
 
         var res = data.match(MATCHERS.progress);
+        
+        self.emit('vagrant-progress', data);
 
         if(res) {
             var machine = res[1];

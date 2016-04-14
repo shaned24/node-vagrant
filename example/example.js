@@ -22,6 +22,10 @@ function onInit(err, out) {
         console.log('download progress: ', [].slice.call(arguments));
     });
 
+   machine.on('vagrant-progress', function(arguments) {
+        console.log('Vagrant progress: ', arguments);
+    });
+
     machine.up(function(err, out) {
         if(err) throw new Error(err);
         
